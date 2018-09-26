@@ -28,6 +28,6 @@ Llevo 3 años usando `R` de manera profesional en una diversidad de proyectos de
 
 Como docente en `R`, he sido el experto residente de la *Escuela Harris* de la *Universidad de Chicago*, en la que dirgí la "STATA and `R` Bar", que asesoraba en el uso de estas herramientas a alumnos de maestría y doctorado. En 2017, fui contratado por la Unidad de Investigación Aplicada de MCCI para capacitar a sus integrantes en el uso de `R`, equipo al que finalmente me integré como investigador. 
 
-![](/home/manuel/Documents/otros/Curso_R_Introduccion/foto.jpg)
+![](foto.jpg)
 
 *Este curso no tiene ninguna relación con esta organización y todas las opiniones dichas y contenidos diseñados son de mi responsabilidad exclusiva.
