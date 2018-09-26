@@ -1,0 +1,386 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Curso introductorio de R},
+            pdfauthor={Manuel Toral},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Curso introductorio de R}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Manuel Toral}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{Octubre 2018}
+
+
+\begin{document}
+\maketitle
+
+\section{¿Dónde es el curso?}\label{donde-es-el-curso}
+
+El curso se llevará a cabo en las instalaciones \emph{Cubic Idea} en
+Colima 158, Colonia Roma Norte, en la Ciudad de México.
+
+\section{¿Cómo contactar al
+instructor?}\label{como-contactar-al-instructor}
+
+\begin{itemize}
+\tightlist
+\item
+  Correo electrónico:
+  \href{mailto:jmtoralcruz@gmail.com}{\nolinkurl{jmtoralcruz@gmail.com}}
+\item
+  Teléfono: Será provisto el primer día del curso.
+\end{itemize}
+
+\section{Objetivo del curso}\label{objetivo-del-curso}
+
+El objetivo del curso es que aprendas a utilizar efectivamente
+\texttt{R} para su vida profesional diaria. Así pues, al final del curso
+se espera desarrolles habilidades con cuatro objetivos particulares.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{Ahorrar tiempo en el procesamiento de información:} El talento
+  de las personas no debe perderse en procesar y talachear bases de
+  datos. \texttt{R} es una herramienta útil para hacer esta tarea de
+  manera más rápida que con una hoja de cálculo.
+\item
+  \emph{Pensar de manera estructurada:} Pensar nuestros procesos de
+  análisis desde una perspectiva estructurada nos da la oportunidad de
+  encontrar respuestas a nuestras preguntas de manera más sencilla.
+\item
+  \emph{Aumentar los límites de acceso a la información:} Muchas de las
+  bases de datos que se usan (y se necesitan) hoy en día están en
+  formatos como \texttt{JSON} o \texttt{SHP}. \texttt{R} es capaz de
+  leerlos y tranformarlos en información útil.
+\item
+  \emph{Automatizar tareas:} Las computadoras fueron inventadas para
+  repetir procesos. Una y otra vez. Cada vez que un ser humano repite
+  una actividad frente a una computadora, está haciendo algo mal. La
+  idea es evitar ese tipo de repeticiones e instruir a la computadora a
+  que las haga.
+\item
+  \emph{Aprovechar a la comunidad:} Las computadoras fueron inventadas
+  para repetir procesos. Una y otra vez. Cada vez que un ser humano
+  repite una actividad frente a una computadora, está haciendo algo mal.
+  La idea es evitar ese tipo de repeticiones e instruir a la computadora
+  a que las haga.
+\end{enumerate}
+
+\section{Material guía}\label{material-guia}
+
+\subsection{Cheatsheets}\label{cheatsheets}
+
+\begin{itemize}
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2016/10/r-cheat-sheet-3.pdf}{\textbf{Base
+  R}}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/lubridate.pdf}{\textbf{Variables
+  de tiempo}}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/data-transformation.pdf}{\textbf{Transformación
+  de datos con \texttt{dplyr}}}
+\item
+  \href{https://www.rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf}{\textbf{RMarkdown}}
+\item
+  \href{https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf}{\textbf{ggplot2}}
+\end{itemize}
+
+\subsection{Libros}\label{libros}
+
+(Da click en el nombre del libro para abrirlo.)
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://bookdown.org/ndphillips/YaRrr/}{La guía pirata de R -
+  Phillips}
+\item
+  \href{http://r4ds.had.co.nz/}{R for Data Science - Grolemund \&
+  Wickham}
+\item
+  \href{https://geocompr.robinlovelace.net/}{Geocomputation with R -
+  Lovelace, Nowosad \& Muenchow}
+\end{itemize}
+
+\subsection{Páginas webs}\label{paginas-webs}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://stackoverflow.com/}{Stack Overflow}
+\item
+  \href{http://www.sthda.com/english/}{STHDA}
+\end{itemize}
+
+\section{Requisitos}\label{requisitos}
+
+\begin{itemize}
+\item
+  Es conveniente que elijas un problema que quieras resolver en tu día a
+  día y poder hacer ejercicios con información de ese tipo. Te
+  recomiendo que me mandes un día antes alguna base con la que quieras
+  trabajar o algún tema que quieras explorar con datos.
+\item
+  El único requisito es tener instaladas las tres herramientas
+  necesarias. Aquí unas breves instrucciones. Si necesitas ver el paso a
+  paso, consulta el archivo \texttt{Instalar\_Paso\_a\_Paso.pdf} en el
+  repositorio.
+\item
+  Haber instalado \texttt{R} en la computadora.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Da clic \href{https://cran.itam.mx/}{\textbf{aquí}}.
+  \item
+    Seleccionar el archivo según tu sistema operativo.
+  \item
+    Seleccionar el link de \textbf{install R for the first time.}
+  \item
+    Descargar el archivo y abrirlo para seguir las insturcciones.
+  \end{enumerate}
+\item
+  Haber instalado \emph{RStudio} en la computadora.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Da clic
+    \href{https://www.rstudio.com/products/rstudio/download/\#download}{\textbf{aquí}}.
+  \item
+    Descarga el instalador de la sección \textbf{Installers for
+    Supported Platforms} de acuerdo a tu sistema operativo.
+  \item
+    Da clik en el archivo descargado y sigue las instrucciones.
+  \end{enumerate}
+\item
+  Haber instalado \LaTeX. El link está aquí.
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \tightlist
+  \item
+    Este está más complicado.
+    \href{https://www.latex-project.org/get/}{\textbf{Aquí}} están las
+    instrucciones, pero sí está muy engorroso, en la clase lo
+    resolvemos.
+  \end{enumerate}
+\item
+  \emph{Estar preparadx para la frustración}.
+\end{itemize}
+
+\section{Uso profesional de R y
+RStudio}\label{uso-profesional-de-r-y-rstudio}
+
+Gran parte de las cosas que uno hace en \texttt{R} forman parte de
+reportes, presentaciones y textos. En esta primera sección aprenderemos
+cómo usar \texttt{R} en \emph{RStudio} de manera profesional a través de
+\emph{R Markdown}. Los temas son los siguientes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Crear archivos en \emph{R Markdown} y ``knitearlos'' para generar
+  archivos estéticamente atractivos y claros.
+\item
+  Entender el uso de los \emph{chunks}.
+\item
+  Entender \emph{RStudio} y sus componentes.
+\item
+  Uso de la consola y la terminal.
+\item
+  Uso de comandos \texttt{echo}, \texttt{warning}, \texttt{fig.*} y
+  \texttt{eval} en la escritura de \emph{R Markdown}.
+\item
+  Exportar \emph{PDF}s, archivos en \emph{HTML} y presentaciones en
+  \emph{Beamer}.
+\item
+  ¿Cómo instalar librerías?
+\end{enumerate}
+
+\section{\texorpdfstring{Brevísima introducción a
+\texttt{R\ base}}{Brevísima introducción a R base}}\label{brevisima-introduccion-a-r-base}
+
+En \texttt{R} hay
+\href{http://www.science.smith.edu/~amcnamara/Syntax-cheatsheet.pdf}{tres
+sintaxis}: \emph{Signo de dólar}, \emph{Formula} y \emph{La sintaxis del
+tidyverso}. Mi favorita y, a mi parecer, la más útil y fácil es la del
+tidyverso. No obstante, repasaremos algunas funciones de la sintaxis
+básica del lenguaje para que no te agarren en curva.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Como crear objetos (y por qué este método de trabajo es superior a
+  hojas de cálculo y ventanas de software)
+\item
+  Tipos de datos (vectores, listas, data frames, matrices, strings)
+\item
+  El método de la \emph{indexación} y cómo usar el famoso \texttt{\$}.
+\item
+  Manipulaciones básicas para explorar bases.
+\item
+  Funciones básicas para obtener estadística descriptiva.
+\item
+  Uso de variables de timempo.
+\end{enumerate}
+
+\section{\texorpdfstring{El
+\texttt{tidyverse}}{El tidyverse}}\label{el-tidyverse}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ¿Qué es y cómo usar un pipe \texttt{\%\textgreater{}\%}?
+\item
+  Filtrar y filtrar con condiciones
+\item
+  Seleccionar variables y modificar sus nombres
+\item
+  Covertir de \emph{long} a \emph{wide} y viceversa.
+\item
+  Agrupar, convertir y ``colapsar'' bases de datos
+\item
+  Uso de \texttt{grep} y una muy breve introducción a \emph{regular
+  expressions}.
+\end{enumerate}
+
+\section{Importar (y usar efectivamente) bases de
+datos}\label{importar-y-usar-efectivamente-bases-de-datos}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Importar datos en formatos \texttt{.xls} (\emph{MS Excel}),
+  \texttt{.dta} (\emph{SATA}), \texttt{.sav} (\emph{SPSS}),
+  \texttt{.dta} (\emph{SATA}), \texttt{.txt} y \texttt{.csv}.
+\item
+  Funciones básicas para el análisis estadístico (\texttt{lm},
+  \texttt{predict}, \texttt{stepAIC}, \texttt{anova}).
+\item
+  Manipulación se datos: hacer muestras y subsets, unir bases con
+  \texttt{merge}, creación de variables binomiales, entre otras.
+\item
+  Manipulación de \emph{strings}
+\item
+  Introducción a la visualización de datos con \texttt{ggplot}.
+\end{enumerate}
+
+\section{Visualización}\label{visualizacion}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Introducción a al gramática de \texttt{ggplot2} y al uso de
+  \texttt{aes()}.
+\item
+  Introducción a la lógica de capas.
+\item
+  Elementos estructurales de las visualizaciones.
+\item
+  Modificación de elementos guía: títulos, subtítulos, títulos de ejes,
+  thiks, escalas, límites, grids y guías.
+\item
+  \texttt{qplot}, esa salida fácil.
+\item
+  Tipos de visualización con respecto a la naturaleza de los datos.
+\end{enumerate}
+
+\section{Últimas fronteras}\label{ultimas-fronteras}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Breve introducción a la minería de texto.
+\item
+  Breve introducción a los datos geográficos.
+\item
+  Breve introducción al scrapeo de información.
+\end{enumerate}
+
+
+\end{document}
