@@ -31,7 +31,7 @@ El objetivo del curso es que aprendas a utilizar efectivamente `R` para su vida 
 
 4. *Automatizar tareas:* Las computadoras fueron inventadas para repetir procesos. Una y otra vez. Cada vez que un ser humano repite una actividad frente a una computadora, está haciendo algo mal. La idea es evitar ese tipo de repeticiones e instruir a la computadora a que las haga.
 
-5. *Aprovechar a la comunidad:* Las computadoras fueron inventadas para repetir procesos. Una y otra vez. Cada vez que un ser humano repite una actividad frente a una computadora, está haciendo algo mal. La idea es evitar ese tipo de repeticiones e instruir a la computadora a que las haga.
+5. *Aprovechar a la comunidad:* La comunidad de usuarixs de este lenguaje es enorme. No hay pregunta sin resolver y no hay excusa para no pedir ayuda. Cosa que no pasa con las listas de correos de STATA.
 
 # Material guía
 
