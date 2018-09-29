@@ -2,11 +2,11 @@
 title: "Sesión 1"
 author: "Manuel Toral"
 date: "29 de septiembre de 2018"
-header-includes:
-  - \usepackage[spanish]{babel}
 output:
   html_document: default
+  word_document: default
   pdf_document: default
+header-includes: \usepackage[spanish]{babel}
 ---
 
 # Estructura general del curso
@@ -98,12 +98,16 @@ Al encerrar nuestro código en estas dos llaves, todo lo que se encuentre dentro
 ```{r mi primer chunk}
 print("Hola Mundo")
 plot(pressure)
+
+library(tidyverse)
+ggplot(pressure, aes(temperature, pressure)) +
+  geom_point()
 ```
 Estos chunks tienen varias características que podemos "prender" y "apagar" según nuestras necesidades. Puede ser que no queramos que nuestro público objetivo vea nuestors códigos o a la perosna interesada solo le importa el resultado. Tambiéne stá la posibilidad de que querramos compartir nuestros códigos, pero haya algo que no esta funcionando. Para eso de utilizan las opciones `echo=`, `eval=`, `warning=`, `message=`. Estas opciones también nos permiten cambiar el tamaño y alineación de nuestras gŕaficas con opciones como `fig.align=`, `fig. width=`, `fig.height=`, etc.
 
 
 
-```{r mi caracteristicas chunk, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
+```{r caracteristicas chunk, eval=TRUE, echo=FALSE, message=FALSE, warning=FALSE}
 print("Hola Mundo")
 plot(pressure)
 ```

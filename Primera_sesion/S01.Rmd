@@ -153,9 +153,6 @@ kable(y)
 ```
 
 
-
-
-
 Literalmente le decimos a R que haga una matriz de los número 1 al 20 ordenadas en 5 filas con 4 columnas.
 
 

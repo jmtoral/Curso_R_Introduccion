@@ -1,0 +1,39 @@
+---
+title: "Nuevo Proyecto"
+author: "Manuel Toral"
+date: "September 29, 2018"
+output:
+  html_document:
+    df_print: paged
+    toc: yes
+  pdf_document:
+    toc: yes
+  word_document:
+    toc: yes
+---
+
+# ¿Por qué Camilo es un buen abogado?
+
+## Primera razón: es muy estudioso
+
+La verdad es que siempre esta estudiando. Por ejemplo. Camilo lee:
+
+1. Revistas
+    1. Nexos
+    2. Proceso
+2. El Periódico
+3. Ve el noticiario de la mañana.
+
+## Segunda razón: Ha publicado
+
+- Papers
+- Artículos
+- En su FB
+    + Comentarios
+    + Le reponde a trolls
+        + Ultracatólicos
+
+### Papers
+
+### Periódico
+
